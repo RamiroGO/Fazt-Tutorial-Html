@@ -84,6 +84,19 @@ ul {
     margin-left: 20px;
 }
 
+/* configurar el ícono de menú (3 lineas) para la barra de navegación */
+.menu-btn {
+    position           : absolute;
+    cursor             : pointer;
+    top                : 15px;
+    right              : 30px;
+    /* Inicializar con Ocultar este Elemento: */
+    display         : none;
+    /*  */
+    z-index            : 2;
+    font-size          : 1.5rem;
+}
+
 hr {
     margin: 10px 0;
 }
@@ -94,7 +107,7 @@ hr {
     height         : 550px;
     background     : url(../img/showcase2.jpg) no-repeat center center/cover;
     /* Hacer que la imagen aparezca ajustándose a las dimensiones de la clase.*/
-    padding-bottom : 50px;
+    padding        : 50px;
     margin-bottom  : 20px;
     display        : flex;
     flex-direction : column;
@@ -154,4 +167,191 @@ hr {
 
 .news-cards a:hover {
     text-decoration: underline;
+}
+
+/*CARDS BANNER ONE*/
+.cards-banner-one {
+    width        : 100%;
+    height       : 350px;
+    background   : url(../img/tech-red.jpg) no-repeat center center/cover;
+    margin-bottom: 40px;
+}
+
+.cards-banner-one .content {
+    width  : 40%;
+    padding: 90px 0 0 30px;
+    color  : #ffffff;
+}
+
+.cards-banner-one p,
+.cards-banner-one h2 {
+    margin: 10px 0 20px 0;
+}
+
+/*CARDS BANNER TWO*/
+.cards-banner-two {
+    width     : 100%;
+    height    : 350px;
+    background: url(../img/image-five.jpg) no-repeat center center/cover;
+}
+
+.cards-banner-two .content {
+    width  : 50%;
+    padding: 100px 0 0 30px;
+}
+
+/*Social*/
+.social {
+    margin: 50px;
+}
+
+.social p {
+    text-align   : center;
+    font-size    : 30px;
+    margin-bottom: 20px;
+}
+
+.links {
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+}
+
+.links a {
+    margin: 0 30px;
+}
+
+.links a i {
+    font-size: 3rem;
+}
+
+/* FOOTER LINKS */
+.footer-links {
+    background: #2f3640;
+    color     : #616161;
+    font-size : 12px;
+    padding   : 35px 0;
+}
+
+/* Propiedades de la clase footer-container en el pie de página:
+    - 4 Columnas
+ */
+.footer-container {
+    display              : grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap                  : 10px;
+    align-items          : flex-start;
+    justify-content      : center;
+}
+
+.footer-container ul {
+    margin: 0 auto;
+}
+
+.footer-links li {
+    line-height: 2.8;
+}
+
+.footer-links li a:hover {
+    text-decoration: underline;
+}
+
+
+.footer-copyright {
+    background    : #2f3640;
+    color         : #616161;
+    font-size     : 12px;
+    padding       : 20px 0;
+    text-align    : center;
+    padding-bottom: 20px;
+}
+
+/* Móvil */
+
+/* Adaptaciones para las dimensiones de la pantalla:*/
+/* Condicional: Cuando las dimensiones del ancho sean inferiores a los 700p*/
+@media(max-width:700px) {
+    /* Este elemento es el botón de las 3 lineas para que aparezca el menú en la barra lateral izquierda y se inicializó como oculto, al reducir el tamaño de la pantalla a menos de 700 pxeles se volverá visible mientras no se cumpla la condición de superar el ancho de la pantalla. */
+    .menu-btn{
+        display: block;
+    }
+    /*, cambiar el fondo de la página a rojo */
+    /* body{background: red;} */
+
+    /* Cambiar la cantidad de columnas de tarjetas de noticias en la clase new-cards */
+    .news-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Cambiar la relación del ancho del contenedor con respecto a la clase */
+    .cards-banner-one .content,
+    .cards-banner-two .content {
+        width: 80%;
+    }
+
+    /* Cambiar la cantidad de columnas de texto para la lista de enlaces en el pie de página */
+    .footer-links .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Crear nueva estética para la barra de navegación */
+    .nav-main ul.nav-menu {
+        display   : block;
+        position  : absolute;
+        top       : 0;
+        left      : 0;
+        background: #2f3640;
+        height    : 100%;
+        padding   : 30px;
+        opacity   : .9;
+        /* Desplazar en X */
+        transform : translateX(-400px);
+        /* añadir efectos de transición y movimiento */
+        transition: transform .5s ease-in-out;
+    }
+
+    /* cuando aparezca una nueva clase llamada show => el translatex dejará de ser -400px y será de -20px */
+    .nav-main ul.nav-menu.show {
+        transform: translateX(-20px);
+    }
+
+    /* Cambiar el estilo de la fuente de los enlaces en la barra de menú de navegación */
+    .nav-main ul.nav-menu li {
+        padding         : 20px;
+        /* Líneas divisorias de botones. */
+        /* border-bottom: #ccc solid 1px; */
+        font-size       : 14px;
+    }
+
+    .nav-main ul.nav-menu-right {
+        margin-right: 40px;
+    }
+}
+
+/* Condicional: Cuando las dimensiones del ancho sean inferiores a los 500p*/
+@media(max-width:500px) {
+    /*, cambiar el fondo de la página a rojo */
+    /* body{background: red;} */
+
+    /* hacer que solo aparezca una columna para las noticias en la clase news-cards */
+    .news-cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    /* Darles una ampliación a las imágenes para que ocupen el mayor espacio que puedan */
+    .news-cards img {
+        height: 270px;
+    }
+
+    /* Modificar las dimensiones de las imágenes en los banners */
+    .cards-banner-one .content,
+    .cards-banner-two .content {
+        width  : 100%;
+        padding: 60px 20px;
+    }
+
+/* Definir una sola columna para la lista de los enlaces en el pie de cabecera. */
+    .footer-links .footer-copyright{
+        grid-template-columns: 1fr;
+    }
 }
