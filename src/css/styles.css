@@ -1,0 +1,99 @@
+/* Global */
+
+* {
+    box-sizing: border-box;
+    margin    : 0;
+    padding   : 0;
+}
+
+body {
+    font-family          : 'Oswald', sans-serif;
+    /*Tipo de Letra descargado desde la página de google*/
+    background-color     : black;
+    /* Pattern from https://www.heropatterns.com/ */
+    background-image     : url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='105' viewBox='0 0 80 105'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='death-star' fill='%23540606' fill-opacity='0.4'%3E%3Cpath d='M20 10a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm15 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zM20 75a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zm30-65a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V10zm0 65a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V75zM35 10a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zM5 45a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10zm60 35a5 5 0 0 1 10 0v50a5 5 0 0 1-10 0V45zm0-35a5 5 0 0 1 10 0v20a5 5 0 0 1-10 0V10z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    color                : #1e272e;
+    color                : #fff;
+    font-size            : 16px;
+}
+
+a {
+    color          : #ffffff;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/* Atributos que se aplican a la etiqueta con nombre de clase "container" */
+
+.container {
+    width                  : 90%;
+    /*Margen del contenedor: */
+    margin                 : auto;
+}
+
+
+/*Navigation*/
+
+
+/*A la etiqueta que se le designo el nombre de la clase "nav-main" se le corresponderán los siguientes atributos: */
+
+.nav-main {
+    font-size      : 17px;
+    display        : flex;
+    /* Hace que el texto se ubique al lado derecho de la imagen*/
+    justify-content: space-between;
+    /*Ocupar todo el ancho disponible*/
+    align-items    : center;
+    height         : 60px;
+    padding        : 20px 0;
+}
+
+/* Reducir el tamaño del logo, reduciendo el tamaño de la etiqueta con el nombre de clase "nav-brand" */
+.nav-brand {
+    width: 50px;
+}
+
+/*NavBar Left*/
+/* Permite ajustar el tamaño de la lista de elementos en el ul, para que quepan uno al lado del otro y no se organicen en una lista vertical. */
+.nav-main ul {
+    display: flex;
+}
+
+/* Permite asignar un tamaño de separación entre los elementos il dentro de los ul que se encuentran en la clase nav-main */
+.nav-main ul li {
+    padding: 10px;
+}
+
+/* Permite definir una distancia de separación para los enlaces dentro de los li en los lu dentro de la clase nav-main */
+.nav-main ul li a {
+    padding: 2px;
+}
+
+/* Darle un color a los enlaces de las etiquetas li que se encuentran dentro de la clase nav-menu */
+.nav-menu li a:hover {
+    border-bottom: 2px solid #ffffff;
+}
+
+/* definir la distancia entre el logo y la lista de elementos de la clase "nav-menu" en el ul, que corresponde con el menú de la barra de navegación de clase "nav-main" */
+.nav-main ul.nav-menu {
+    flex       : 1;
+    margin-left: 20px;
+}
+
+hr {
+    margin: 10px 1;
+}
+
+/* SHOWCASE */
+.showcase {
+    width         : 100%;
+    height        : 550px;
+    background    : url(https://github.com/FaztWeb/technews-html/blob/87af379fb73b758f1dead61c9835299bfde7b4e7/img/showcase2.jpg);
+    padding-bottom: 50px;
+    display       : flex;
+    flex-direction: column;
+}
